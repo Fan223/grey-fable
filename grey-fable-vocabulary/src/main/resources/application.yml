@@ -1,0 +1,19 @@
+server:
+  port: 9000
+  servlet:
+    context-path: /vocabulary
+
+spring:
+  application:
+    name: grey-fable-vocabulary
+  datasource:
+    driver-class-name: com.p6spy.engine.spy.P6SpyDriver
+    url: jdbc:p6spy:mysql://124.222.118.90:3306/grey_fable_vocabulary?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&useSSL=false&autoReconnect=true&failOverReadOnly=false&connectTimeout=5000&socketTimeout=10000
+    username: root
+    password: fan223
+
+# p6spy \u914D\u7F6E
+decorator:
+  datasource:
+    p6spy:
+      log-format: "\n\tExecute Time: %(executionTime)ms\n\tExecute SQL: %(sql)"
